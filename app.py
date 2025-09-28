@@ -11,7 +11,7 @@ participants = {}  # { sid: {"id": str, "name": str, "mic": bool, "avatar": str}
 
 @app.route("/")
 def index():
-    return render_template("index2.html")
+    return render_template("index.html")
 
 @socketio.on("join")
 def handle_join(data):
@@ -41,3 +41,4 @@ def handle_signal(message):
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+
