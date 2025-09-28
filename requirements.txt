@@ -1,0 +1,6 @@
+Flask==2.3.3
+Flask-SocketIO==5.3.5
+gevent>=22.10.2
+gevent-websocket>=0.10.1   # ⚠️ needed for WebSocket support
+gunicorn>=20.1.0
+setuptools>=65.0.0
