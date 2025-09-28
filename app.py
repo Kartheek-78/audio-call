@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="gevent")
 
 @app.route('/')
 def index():
@@ -18,3 +18,4 @@ def handle_signal(message):
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000)
+
