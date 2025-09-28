@@ -330,12 +330,26 @@
         socket.emit("toggleMic", { status: isMicOn });
       };
 
-      // --- End Call ---
       document.getElementById("endCall").onclick = () => {
         socket.disconnect();
         if (pc) pc.close();
-        alert("Call Ended");
-        window.location.reload();
+
+        document.body.innerHTML = `
+    <div style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0d1b2a;
+      color: #e0e1dd;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      flex-direction: column;
+      text-align: center;
+    ">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">Call Ended</h2>
+      <p style="font-size: 1rem; color: #778da9;">You may close this tab.</p>
+    </div>
+  `;
       };
 
       // --- Speaker toggle ---
